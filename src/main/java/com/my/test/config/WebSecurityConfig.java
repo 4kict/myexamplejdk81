@@ -1,4 +1,4 @@
-package com.my.test;
+package com.my.test.config;
 
 
 import org.springframework.context.annotation.Bean;

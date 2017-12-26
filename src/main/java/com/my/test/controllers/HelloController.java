@@ -1,7 +1,8 @@
 package com.my.test.controllers;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.ui.Model;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,9 @@ public class HelloController {
 //        if (bindingResult.hasErrors()) {
 //            return bindingResult.toString();
 //        }
-        return name;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        return name + " (" + ((UserDetails) principal).getUsername() + ")";
     }
 
 

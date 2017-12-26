@@ -6,6 +6,8 @@
     <title>Error</title>
 </head>
 <body>
-Error 123123
+Error 123123 <br>
+${status}
+${message}
 </body>
 </html>
